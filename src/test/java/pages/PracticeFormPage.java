@@ -199,7 +199,7 @@ public class PracticeFormPage {
         return this;
     }
 
-    @Step("Проверить, что дата рождения в модальном окне равна '{birthday}'")
+    @Step("Проверить, что изучаемый предмет в модальном окне равен '{subjects}'")
     public PracticeFormPage checkSubjectsInResultModal(String subjects) {
         resultModalWindow.shouldHaveSubjects(subjects);
         return this;
