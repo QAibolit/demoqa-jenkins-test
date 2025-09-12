@@ -43,3 +43,13 @@ test {
     useJUnitPlatform()
     systemProperties(System.getProperties())
 }
+
+tasks.register("demoqa-tests", Test) {
+    testLogging {
+        events "passed", "skipped", "failed", "standardOut", "standardError"
+        exceptionFormat "full"
+    }
+    useJUnitPlatform {
+        includeTags("demoqa-tests")
+    }
+}

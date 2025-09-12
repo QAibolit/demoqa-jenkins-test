@@ -3,9 +3,11 @@ package tests;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.PracticeFormPage;
 
+@Tag("demoqa-tests")
 public class PracticeFormWithPageObjectTest extends BaseTest {
 
     String firstName = "Ivan",
