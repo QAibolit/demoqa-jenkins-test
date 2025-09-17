@@ -16,25 +16,13 @@ public class BaseTest {
 
     @BeforeAll
     public static void setUp() {
-        Configuration.browserSize = System.getProperty("browserSize");
-        Configuration.browser = System.getProperty("browser");
-        Configuration.browserVersion = System.getProperty("browserVersion");
-        Configuration.remote = System.getProperty("remoteUrl");
-
-        // -Dbrowser=${BROWSER}
-        // -DbrowserVersion=${BROWSER_VERSION}
-        // -DbrowserSize=${BROWSER_SIZE}
-//        Configuration.browserSize = "1920x1080";
-        // -DremoteUrl=https://user1:1234@${REMOTE_URL}/wd/hub"
-//        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
-
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
         Configuration.timeout = 10000;
-
-//        Configuration.browser = System.getProperty("browser", "chrome");
-//        Configuration.browserVersion = System.getProperty("browserVersion", "132");
-//        Configuration.browserSize = "1920x1080";
+        Configuration.browser = System.getProperty("browser");
+        Configuration.browserVersion = System.getProperty("browserVersion");
+        Configuration.browserSize = System.getProperty("browserSize");
+        Configuration.remote = System.getProperty("remoteUrl");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
