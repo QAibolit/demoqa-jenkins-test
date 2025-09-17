@@ -31,6 +31,9 @@ public class BaseTest {
         Configuration.pageLoadStrategy = "eager";
         Configuration.timeout = 10000;
         Configuration.remote = System.getProperty("remoteUrl");
+        Configuration.browser = System.getProperty("browser");
+        Configuration.browserVersion = System.getProperty("browserVersion");
+        Configuration.browserSize = System.getProperty("browserSize");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
