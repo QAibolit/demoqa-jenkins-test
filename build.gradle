@@ -45,6 +45,7 @@ test {
 }
 
 tasks.register("demoqa-tests", Test) {
+    systemProperties(System.getProperties())
     testLogging {
         events "passed", "skipped", "failed", "standardOut", "standardError"
         exceptionFormat "full"
