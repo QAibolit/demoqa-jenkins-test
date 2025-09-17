@@ -39,17 +39,18 @@ dependencies {
     )
 }
 
-test {
+tasks.withType(Test).configureEach {
     useJUnitPlatform()
     systemProperties(System.getProperties())
-}
 
-tasks.register("demoqa-tests", Test) {
-    systemProperties(System.getProperties())
     testLogging {
         events "passed", "skipped", "failed", "standardOut", "standardError"
         exceptionFormat "full"
     }
+}
+
+tasks.register("demoqa-tests", Test) {
+
     useJUnitPlatform {
         includeTags("demoqa-tests")
     }
